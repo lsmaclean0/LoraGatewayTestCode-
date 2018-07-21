@@ -676,7 +676,7 @@ void setup() {
     // Power ON the module
     e = sx1272.ON();
 
-    PRINT_CSTSTR("%s", "^$**********Power ON: state ");
+    PRINT_CSTSTR("%s", "^$**********  RetroCow Lora Gateway Power ON: state ");
     PRINT_VALUE("%d", e);
     PRINTLN;
 
