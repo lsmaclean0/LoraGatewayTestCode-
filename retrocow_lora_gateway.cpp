@@ -531,6 +531,7 @@ void loop(void){
             #else
                 // print to stdout the content of the packet
                 //
+                PRINT_CSTSTR("%s","Check following data from Lora Module: \n");
                 for (; a < tmp_length; a++, b++) {
                     PRINT_STR("%c", (char) sx1272.packet_received.data[a]);
 
