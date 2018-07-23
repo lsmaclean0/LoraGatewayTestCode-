@@ -2,8 +2,8 @@
 // Created by Zhijiang Chen on 7/22/18.
 //
 
-#ifndef SX1272_h
-#define SX1272_h
+// Include the SX1272
+#include "SX1272.h"
 
 
 ///////////////////////////////////////////////////////////////////
