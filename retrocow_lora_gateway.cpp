@@ -64,6 +64,8 @@ uint8_t loraChannelIndex=0;
 uint32_t loraChannelArray[MAX_NB_CHANNEL]={CH_00_433,CH_01_433,CH_02_433,CH_03_433};
 #endif
 
+uint32_t loraChannel = loraChannelArray[loraChannelIndex];
+
 bool optAESgw = false;
 bool optRAW = false;
 uint16_t optBW = 0;
