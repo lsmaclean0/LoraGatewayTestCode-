@@ -5,6 +5,16 @@
 // Include the SX1272
 #include "SX1272.h"
 
+#include <stdio.h>
+#include <getopt.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <termios.h>
+#include <signal.h>
+#include <sys/time.h>
+#include <time.h>
+#include <math.h>
+
 
 ///////////////////////////////////////////////////////////////////
 // DEFAULT LORA MODE
@@ -59,7 +69,7 @@ bool optRAW = false;
 uint16_t optBW = 0;
 uint8_t optCR = 0;
 uint8_t optSF = 0;
-unit8_t optCH = 0;
+uint8_t optCH = 0;
 double optFQ = -1.0;
 uint8_t optSW = 0x12;
 
