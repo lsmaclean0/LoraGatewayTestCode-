@@ -23,6 +23,12 @@
 #include <time.h>
 #include <math.h>
 
+#define PRINTLN                   printf("\n")
+#define PRINT_CSTSTR(fmt, param)   printf(fmt,param)
+#define PRINT_STR(fmt, param)      PRINT_CSTSTR(fmt,param)
+#define PRINT_VALUE(fmt, param)    PRINT_CSTSTR(fmt,param)
+#define PRINT_HEX(fmt, param)      PRINT_VALUE(fmt,param)
+#define FLUSHOUTPUT               fflush(stdout);
 
 ///////////////////////////////////////////////////////////////////
 // DEFAULT LORA MODE
@@ -84,6 +90,52 @@ double optFQ = -1.0;
 uint8_t optSW = 0x12;
 
 
+/**
+ * Setup Lora Device
+ */
+void setup(){
+
+    int e;
+
+    // Power ON the module
+    e = sx1272.ON();
+    PRINT_CSTSTR("%s", "^$**********  RetroCow Lora Gateway Power ON: state ");
+    PRINT_VALUE("%d", e);
+    PRINTLN;
+
+    e = sx1272.getSyncWord();
+
+    if(!e){
+        PRINT_CSTSTR("%s", "^$Default sync word: 0x");
+        PRINT_HEX("%X", sx1272._syncWord);
+        PRINTLN;
+    }
+
+    if (optSW != 0x12){
+        e = sx1272.setSyncWord(optSW);
+
+        PRINT_CSTSTR("%s", "^$Set sync word to 0x");
+        PRINT_HEX("%X", optSW);
+        PRINTLN;
+        PRINT_CSTSTR("%s", "^$LoRa sync word: state ");
+        PRINT_VALUE("%d", e);
+        PRINTLN;
+    }
+
+    if (!e){
+        radioON = true;
+    }
+
+    FLUSHOUTPUT;
+    delay(1000);
+}
+
+/**
+ * Application Entry
+ * @param argc
+ * @param argv
+ * @return
+ */
 int main(int argc, char *argv[]){
 
     int opt = 0;
@@ -103,7 +155,7 @@ int main(int argc, char *argv[]){
 
     int long_index = 0;
 
-    while((opt = getopt_long(argc, argv, "a:bc:d:e:fg:h:i:j",
+    while((opt = getopt_long(argc, argv, "a:bc:d:e:fg:h:i",
             long_options, &long_index)) !=-1){
 
         switch(opt){
@@ -145,4 +197,7 @@ int main(int argc, char *argv[]){
                 break;
         }
     }
+
+    // Init
+    setup();
 }
