@@ -9,7 +9,7 @@ lora_gateway_pi2: lora_gateway_pi2.o arduPi_pi2.o SX1272_pi2.o
 	ln -s lora_gateway_pi2 ./lora_gateway
 
 lora_gateway_retro: retrocow_lora_gateway.o arduPi_pi2.o SX1272_pi2.o
-	g++ -lrt -lpthread retro_lora_gateway.o arduPi_pi2.o SX1272_pi2.o -o retrocow_lora_gateway_pi2
+	g++ -lrt -lpthread retrocow_lora_gateway.o arduPi_pi2.o SX1272_pi2.o -o retrocow_lora_gateway_pi2
 	rm -f retrocow_lora_gateway
 	ln -s retrocow_lora_gateway_pi2 ./retrocow_lora_gateway
 	
