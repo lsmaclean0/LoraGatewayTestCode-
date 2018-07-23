@@ -82,6 +82,7 @@ uint32_t loraChannel = loraChannelArray[loraChannelIndex];
 
 bool optAESgw = false;
 bool optRAW = false;
+bool radioON = false;
 uint16_t optBW = 0;
 uint8_t optCR = 0;
 uint8_t optSF = 0;
