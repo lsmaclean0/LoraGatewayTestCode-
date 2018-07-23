@@ -113,6 +113,7 @@ uint8_t optSF = 0;
 uint8_t optCH = 0;
 double optFQ = -1.0;
 uint8_t optSW = 0x12;
+int status_counter = 0;
 
 
 /**
@@ -428,8 +429,8 @@ void loop(void){
 
 
             #if not defined GW_RELAY
-                sx1727.getSNR();
-                sx1727.getRSSIpacket();
+                sx1272.getSNR();
+                sx1272.getRSSIpacket();
 
                 // we split in 2 parts to use a smaller buffer size
                 sprintf(cmd, "--- rxlora. dst=%d type=0x%.2X src=%d seq=%d",
