@@ -13,6 +13,12 @@
 //#define BAND433
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// For a Raspberry-based gateway the distribution uses a radio.makefile file that can define MAX_DBM
+//
+#ifndef MAX_DBM
+    #define MAX_DBM 14
+#endif
+
 #include <stdio.h>
 #include <getopt.h>
 #include <stdlib.h>
@@ -38,8 +44,15 @@
 //#define LORAMODE 11
 ///////////////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////////////////////////
+// GATEWAY HAS ADDRESS 1
+#define LORA_ADDR 1
+///////////////////////////////////////////////////////////////////
+
 // set loraMode to default LORAMODE
 uint8_t loraMode = LORAMODE;
+
+uint8_t loraAddr = LORA_ADDR;
 
 //#define SHOW_FREEMEMORY
 //#define GW_RELAY
@@ -90,8 +103,6 @@ uint8_t optCH = 0;
 double optFQ = -1.0;
 uint8_t optSW = 0x12;
 
-
-uint8_t loraMode = LORAMODE;
 
 
 /**
