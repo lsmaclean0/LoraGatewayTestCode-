@@ -115,6 +115,15 @@ double optFQ = -1.0;
 uint8_t optSW = 0x12;
 int status_counter = 0;
 
+// will use 0xFF0xFE to prefix data received from LoRa, so that post-processing stage can differenciate
+// data received from radio
+#define WITH_DATA_PREFIX
+
+#ifdef WITH_DATA_PREFIX
+#define DATA_PREFIX_0 0xFF
+#define DATA_PREFIX_1 0xFE
+#endif
+
 
 /**
  * Get CMD value
