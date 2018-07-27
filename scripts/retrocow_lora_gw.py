@@ -128,10 +128,10 @@ def displayData(temp):
         draw.text((0, 0), "RetroCow Radio GW", fill="white")
         if device.height >= 32:
             draw.text((0, 14), "Temp: " + temp, fill="white")
-            draw.text((0, 45), '____________________', fill="white")
+            draw.text((0, 44), '____________________', fill="white")
             #draw time at bottom
             now = datetime.now()
-            draw.text((0, 56), "U: " + now.strftime('%x')+ ' ' + now.strftime('%X'), fill="white")
+            draw.text((0, 55), "U: " + now.strftime('%x')+ ' ' + now.strftime('%X'), fill="white")
 
 def publishToGoogleSub(message):
     # UTF-8 encoding
