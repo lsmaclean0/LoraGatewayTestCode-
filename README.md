@@ -20,7 +20,12 @@ This project is modified based on WAZIUP project, customized for Retrocow Lorawa
 #### Install OLED display driver
 Kit preinstall 0.9" OLED display model SH1106, we tested on Luma oled driver, you can install different drive and change code accordingly.
 
-Install drive, please adjust the python lib based on your python version, python 2.5 come with OS.
+Enable I2C for Pi device by following command
+```
+$ sudo raspi-config
+```
+
+Install drive, substitute python3 for python in the following examples if you are using python3.
 ```
 $ sudo usermod -a -G i2c,spi,gpio pi
 $ sudo apt install python-dev python-pip libfreetype6-dev libjpeg-dev build-essential
@@ -92,6 +97,6 @@ sudo systemctl start pi3_shutdown.service
 ### Retrocow Lorawan Kit Node Setup
 Please following [Lora Node Temperature Sample](https://github.com/lastcow/iot-lora_node_temperature) to setup Lora node.
 
-### Many Thanks
+### Many thanks
 - Zhijiang Chen (zhijiang@chen.me)
 - Bo Yuan (hosyp11@yahoo.com)
