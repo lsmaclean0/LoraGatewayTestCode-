@@ -2,15 +2,15 @@ This project written in c++, need to make it complete work flow with this projec
 
 This project is modified based on WAZIUP project, removed uncecessary features.
 
-###Make project
+### Make project
 ```
 make retrocow_lora_gateway
 ```
 
-###Script to start
+### Script to start
 start.sh contain the command to start lora gateway and passing data to post-processing python script, if you like to everything just print on script, just remove post processing pythong script.
 
-###Start gateway as service
+### Start gateway as service
 create a file called lora.service as following:
 
 ```
