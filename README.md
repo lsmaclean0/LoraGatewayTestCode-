@@ -16,7 +16,7 @@ This project is modified based on WAZIUP project, customized for Retrocow Lorawa
 > [This github](https://github.com/lastcow/retrocow-lora-gw)
 
 
-### Installation Steps
+### Kit Installation
 #### Install OLED display driver
 Kit preinstall 0.9" OLED display model SH1106, we tested on Luma oled driver, you can install different drive and change code accordingly.
 
@@ -93,6 +93,9 @@ sudo mv pi3_shutdown.service /etc/systemd/system/.
 sudo systemctl enable pi3_shutdown.service
 sudo systemctl start pi3_shutdown.service
 ```
+
+### Option
+Once data been send to post python script: retrocow_lora_gw.py, you are free to use those data, here in example we send those data to google cloud pub/sub, then broadcast to different locations, if you like to use this feature, please follow google cloud tutorial to create a pub/sub topic and subscription.
 
 ### Retrocow Lorawan Kit Node Setup
 Please following [Lora Node Temperature Sample](https://github.com/lastcow/iot-lora_node_temperature) to setup Lora node.
