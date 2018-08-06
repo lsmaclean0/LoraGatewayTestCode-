@@ -69,7 +69,7 @@ _has_linebuf = 0
 # ------------------------------------------------------------
 # for google cloud sub/pub service
 # ------------------------------------------------------------
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/pi/Lora Radio-040a700bc68e.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/pi/Lora-Radio-040a700bc68e.json"
 _project="lora-radio"
 _subTopic="temperature"
 
