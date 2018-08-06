@@ -137,7 +137,7 @@ def publishToGoogleSub(message):
     # UTF-8 encoding
     data = message.encode('utf-8')
     # Publish to google cloud
-    publisher.publish(topic_path, data=data)
+    publisher.publish(topic_path, data, temptime=int(round(time.time() * 1000)));
 
 # Init display
 displayData("--")
