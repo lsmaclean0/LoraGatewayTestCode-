@@ -27,6 +27,7 @@ $ sudo raspi-config
 
 Install drive, substitute python3 for python in the following examples if you are using python3.
 ```
+$ sudo apt-get update
 $ sudo usermod -a -G i2c,spi,gpio pi
 $ sudo apt install python-dev python-pip libfreetype6-dev libjpeg-dev build-essential
 $ sudo apt install libsdl-dev libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev
@@ -36,12 +37,18 @@ $ pip install luma.oled
 
 #### Install core project executable
 ```
+$ sudo apt-get install git
+$ sudo git clone https://github.com/lastcow/retrocow-lora-gw.git
 $ cd retrocow-lora-gw
-$ sudo make retrocow_lora_gateway
+$ sudo make lora_gateway_retro
 $ sudo chmod +x *.sh
 ```
 and try following command
 ```
+// Install psutil for reading system info
+$ sudo pip install psutil
+// Install google cloud lib before start (for push to google cloud server, will throw error due to the demo, but screen should works fine.
+$ sudo pip install --upgrade google-cloud-pubsub
 $ ./start.sh
 ```
 if you see output on screen and oled display, means kit start successfully.
