@@ -75,8 +75,8 @@ _subTopic="temperature"
 
 from google.cloud import pubsub_v1
 
-publisher = pubsub_v1.PublisherClient();
-topic_path = publisher.topic_path(_project, _subTopic)
+# publisher = pubsub_v1.PublisherClient();
+# topic_path = publisher.topic_path(_project, _subTopic)
 
 
 def getSingleChar():
@@ -176,8 +176,8 @@ while True:
                     # Display
                     temprature = re.findall(r"\d+\.*\d*",tc[0])
                     displayData(temprature[0])
-                    publishToGoogleSub(temprature[0])
-                    os.system('curl -H "Content-Type: application/json" -H "Authorization: OAuth PL6O1oU7O67GBmvIj7Cq" -d \'{"messages":[{"body":"' + ldata.rstrip() + '"}]}\' "http://mq-aws-eu-west-1-1.iron.io/3/projects/5b57cb0f0b29d90009fb5f82/queues/lora_gateway/messages"')
+#                     publishToGoogleSub(temprature[0])
+#                     os.system('curl -H "Content-Type: application/json" -H "Authorization: OAuth PL6O1oU7O67GBmvIj7Cq" -d \'{"messages":[{"body":"' + ldata.rstrip() + '"}]}\' "http://mq-aws-eu-west-1-1.iron.io/3/projects/5b57cb0f0b29d90009fb5f82/queues/lora_gateway/messages"')
                 else:
                     displayData("ERR")
 
